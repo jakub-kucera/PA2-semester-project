@@ -17,18 +17,18 @@ Engine může fungovat jako real-time hra, či tahová hra.
 
 Jak může vypadat mapa?
 
-" " označuje možnou lokaci věže a prázdné místa, A, B označuje dva druhy věží, \# označuje zeď, @ a % jsou různé druhy útočníků.
+" " označuje možnou lokaci věže a prázdné místa, A, B označuje dva druhy věží, # označuje zeď, @ a % jsou různé druhy útočníků.
 
 
-\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#
-\#                        \#       @@  \#          \#
-\#         \#              \#    %B  @  \#\#\#        \#
-\#         \#              \#    %\#  @    \#    B   \#
-<=%%%     \#              A    %\#       \#@@@@@@@<=
-\#         \#              A    %\#       @@   B   \#
-\#                        A    %\#                \#
-\#                 %%%       %%%\#                \#
-\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#
+#################################################
+#                        #       @@  #          #
+#         #              #    %B  @  ###        #
+#         #              #    %#  @    #    B   #
+<=%%%     #              A    %#       #@@@@@@@<=
+#         #              A    %#       @@   B   #
+#                        A    %#                #
+#                 %%%       %%%#                #
+#################################################
 Cesta kudy se budu útočníci ubírat bude vždy nejkratší možná vzhledem ke zdím a věžím. "Nejkratší" se může lišit pro létající (ignorují zdi) a pozemní jednotky. Pro chytré jednotky, které se vyhýbají věžím. Pro jednotky s krátkým dohledem (k pohybu využívají jen informaci o okolí 5ti polí a cíl).
 
 Kde lze využít polymorfismus? (doporučené)
@@ -53,15 +53,15 @@ Formát věže + ukázka:
 Znak pro zobrazení na mapě; barva; název; typ; informace zda utočí na všechno v okolí či pouze jednoho; cena; poškození útokem; vzdálenost útoku; rychlost útoku
 B;white;Basic Tower;basic;all;100;200;5;1
 Formát mapy + ukázka:
-Mapa vykreslená pomocí znaků. \# pro volné místo pro věž, = pro start a konec, a mezeru pro volné místo pro pohyb nepřátel.
+Mapa vykreslená pomocí znaků. # pro volné místo pro věž, = pro start a konec, a mezeru pro volné místo pro pohyb nepřátel.
 -Název-Celkové zdraví-Počáteční peníze
-\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#
-\#      \#  \#      \#       \#
-\#      \#  \#  \#   \#       \#
-=      \#\#\#\#  \#   \#    \#  =
-\#            \#        \#  \#
-\#            \#        \#  \#
-\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#
+##########################
+#      #  #      #       #
+#      #  #  #   #       #
+=      ####  #   #    #  =
+#            #        #  #
+#            #        #  #
+##########################
 -Bludistatko-1000-1000
 Pokud si uživatel nezvolil načtení uložené hry ze souboru, tak po načtení assetů se vypíše list se všemi mapami, ze kterých si uživatel jednu vybere a k tomu si ještě vybere, jak se má vytvořit cesta po které se budou pohybovat nepřátelé a následně se spustí herní cyklus, který má několik fází:
 1)	Načte se vstup. Pokud uživatel zadá na vstup znak 'c', tak následně zadá souřadnice a id věže které se má postavit. Pokud uživatel zadá znak 'q', tak se hra ukončí, po zadání 's' se hra uloží. Při zadání jakékoliv jiného znaku než 'c','s' a 'q' se hra “posune”.
