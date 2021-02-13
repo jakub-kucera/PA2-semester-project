@@ -1,0 +1,3 @@
+Z;green;Zombie;Undead;50
+S;blue;Water dragon;Water;25
+U;cyan;Unicorn;Magical;400

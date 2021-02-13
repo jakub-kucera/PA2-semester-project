@@ -1,0 +1,4 @@
+B;white;Basic Tower;basic;all;100;200;5;1
+F;red;Fire Tower;fire;one;200;150;1;2
+P;green;Poisonous tower;poison;all;400;40;2;2
+S;magenta;Sharp tower;bleed;one;240;100;2;3
